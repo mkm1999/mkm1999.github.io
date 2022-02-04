@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت</title>
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./css/vazir.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <header class="bg-white sticky-top">
+       <nav class="navbar navbar-light navbar-expand-lg p-0">
+           <div class="d-flex align-items-center">
+               <a href="#" class="navbar-brand bg-light py-3 px-5 h3 d-inline-block m-0">پنل مدیریت راکت</a>
+               <i class="bi bi-list h4 m-0 ms-3" data-bs-toggle="collapse" data-bs-target="#nav1"></i>
+           </div>
+           <div class="collapse navbar-collapse justify-content-between me-3">
+                <ul class="list-unstyled navbar-nav ms-5">
+                    <li class="nav-item"><a class="nav-link active" href="#">داشبورد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">اعضا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">تنظیمات</a></li>
+                </ul>
+                <div>
+                    <button class="btn btn-success btn-sm">ایمیل های جدید<span class="badge text-dark bg-light ms-1 p-1">9</span></button>
+                    <button class="btn btn-primary btn-sm">نظرات جدید<span class="badge text-dark bg-light ms-1 p-1">5</span></button>
+                    <button class="btn btn-danger btn-sm">خروج</button>
+                </div>
+           </div>
+       </nav>
+   </header>
+  <div class="container-fluid">
+    <div class="row">
+        <nav id="nav1" class="bg-dark col-12 col-md-3 col-xl-2 text-white collapse show">
+            <p class="py-3 ms-2">منو اصلی</p>
+            <ul class="list-unstyled">
+                <li class="nav-item d-flex align-items-center"><a class="nav-link text-white" href="#">
+                    <i class="bi bi-fan me-2"></i>
+                    داشبورد
+                </a></li>
+                <li class="nav-item  my-2">
+                    <a class="nav-link text-white w-100 d-block collapsed" href="#collapse1" data-bs-toggle="collapse">
+                        <div class="d-inline-block">
+                            <i class="bi bi-journal-bookmark-fill me-2"></i>
+                            مقالات
+                        </div>
+                        <i class="bi bi-caret-left-fill float-end" id="toggle-icon1"></i>
+                    </a>
+                    <div class="collapse" id="collapse1">
+                        <ul class="list-unstyled mx-4">
+                            <li class="nav-item my-2"><a class="nav-link text-white" href="#">مشاهده همه</a></li>
+                            <li class="nav-item my-2">
+                                <a class="nav-link text-white collapsed" href="#collapse2" data-bs-toggle="collapse">
+                                    ارسال مقاله
+                                     <i class="bi bi-caret-left-fill float-end" id="toggle-icon2"></i>
+                                </a>
+                                <div class="collapse" id="collapse2">
+                                    <ul class="list-unstyled mx-4">
+                                        <li class="nav-item my-2"><a class="nav-link text-white" href="#">مقاله کوتاه</a></li>
+                                        <li class="nav-item my-2">
+                                            <a class="nav-link text-white" href="#">
+                                                مقاله بلند
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item d-flex align-items-center"><a class="nav-link text-white" href="#">
+                    <i class="bi bi-camera-video-fill me-2"></i>
+                    دوره ها
+                </a></li>
+            </ul>
+            <p class="py-3 ms-2">متفرقه</p>
+            <ul class="list-unstyled">
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link text-white" href="#">
+                        <i class="bi bi-person-fill me-2"></i>
+                        اعضا
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link text-white" href="#">
+                        <i class="bi bi-chat-right-fill me-2"></i>
+                        نظرات
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link text-white" href="#">
+                        <i class="bi bi-gear-fill me-2"></i>
+                        تنظیمات
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="col-12 col-md-8 col-xl-10 ms-auto bg-light" id="main">
+            <div class="container-fluid">
+                <div class="row my-5">
+                    <div class="col my-2">
+                        <div class="card bg-success text-white ">
+                            <div class="card-header">
+                                <h3>75200</h3>
+                                <p>- تعداد اعضای ثبت نام شده</p>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="first-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col my-2">
+                        <div class="card bg-primary text-white ">
+                            <div class="card-header">
+                                <h3>23560</h3>
+                                <p>- تعداد اعضای ثبت نام شده</p>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="second-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col my-2">
+                        <div class="card bg-warning text-white ">
+                            <div class="card-header">
+                                <h3>12500</h3>
+                                <p>- تعداد اعضای ثبت نام شده</p>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="third-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col my-2">
+                        <div class="card bg-dark text-white ">
+                            <div class="card-header">
+                                <h3>42600</h3>
+                                <p>- تعداد اعضای ثبت نام شده</p>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="fourth-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-bottom py-2 my-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2>داشبورد</h2>
+                        <div class="d-flex">
+                            <div class="btn-group">
+                                <button class="btn btn-outline-secondary btn-sm">اشتراک گذاری</button>
+                                <button class="btn btn-outline-secondary btn-sm">خروجی گرفتن</button>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm ms-3">خروجی گرفتن</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                آمار بازدید
+                            </div>
+                            <div class="card-body">
+                                <canvas id="five-chart" height="150"></canvas>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-12  col-md-6 col-lg-3 my-3 m-lg-0 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <h5>همه بازدید ها</h5>
+                                            <p>25680 بازدید (40%)</p>
+                                            <div class="progress w-100">
+                                                <div class="progress-bar bg-warning" style="width: 40%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12  col-md-6 col-lg-3 my-3 m-lg-0 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <h5>بازدید‌های یکتا</h5>
+                                            <p>15460 بازدید (25%)</p>
+                                            <div class="progress w-100">
+                                                <div class="progress-bar bg-primary" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12  col-md-6 col-lg-3 my-3 m-lg-0 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <h5>صفحات بازدید شده</h5>
+                                            <p>79500 بازدید (80%)</p>
+                                            <div class="progress w-100">
+                                                <div class="progress-bar bg-success" style="width: 80%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12  col-md-6 col-lg-3 my-3 m-lg-0 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <h5>نرخ پرش</h5>
+                                            <p>36400 بازدید (43%)</p>
+                                            <div class="progress w-100">
+                                                <div class="progress-bar bg-danger" style="width: 43%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 pb-4 border-bottom">
+                    <h2>آخرین مقالات</h2>
+                </div>
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>عنوان مقاله</th>
+                                <th>تعداد نظرات</th>
+                                <th>مقدار بازدید</th>
+                                <th>تنظیمات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>چه زمانی مشتری خیلی دور شده است</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm">ویرایش</button>
+                                        <button class="btn btn-danger btn-sm">حذف</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+<script src="./js/script.js"></script>
+
+</body>
+</html>
